@@ -1,0 +1,52 @@
+# Dependencies
+node_modules/
+
+# Python virtual environments
+mythril-env/
+venv/
+.venv/
+__pycache__/
+*.pyc
+
+# Environment variables (CRITICAL - contains private keys!)
+.env
+.env.local
+.env.*.local
+
+# Hardhat files
+cache/
+artifacts/
+typechain/
+typechain-types/
+
+# Coverage
+coverage/
+coverage.json
+
+# Build
+build/
+dist/
+
+# Deployment files (contain sensitive addresses)
+deployment-*.json
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# Testing
+.nyc_output/
+
+# Misc
+*.bak
+*.tmp

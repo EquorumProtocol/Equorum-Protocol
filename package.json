@@ -1,0 +1,57 @@
+{
+  "name": "equorum-v2",
+  "version": "2.0.0",
+  "description": "Equorum V2 - Minimalist DeFi Protocol for Arbitrum L2",
+  "main": "index.js",
+  "scripts": {
+    "compile": "npx hardhat compile",
+    "test": "npx hardhat test",
+    "test:gas": "REPORT_GAS=true npx hardhat test",
+    "deploy:local": "npx hardhat run scripts/deploy.js --network localhost",
+    "deploy:arbitrum-sepolia": "npx hardhat run scripts/deploy.js --network arbitrumSepolia",
+    "deploy:arbitrum": "npx hardhat run scripts/deploy.js --network arbitrum",
+    "verify:arbitrum": "npx hardhat verify --network arbitrum",
+    "lint": "npx solhint 'contracts/**/*.sol'",
+    "clean": "npx hardhat clean",
+    "node": "npx hardhat node"
+  },
+  "keywords": [
+    "ethereum",
+    "arbitrum",
+    "defi",
+    "staking",
+    "governance",
+    "erc20"
+  ],
+  "author": "Equorum Team",
+  "license": "MIT",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-chai-matchers": "^2.0.8",
+    "@nomicfoundation/hardhat-ethers": "^3.0.8",
+    "@nomicfoundation/hardhat-ignition": "^0.15.9",
+    "@nomicfoundation/hardhat-ignition-ethers": "^0.15.9",
+    "@nomicfoundation/hardhat-network-helpers": "^1.0.12",
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "@nomicfoundation/hardhat-verify": "^2.0.12",
+    "@typechain/ethers-v6": "^0.5.1",
+    "@typechain/hardhat": "^9.1.0",
+    "@types/chai": "^4.3.20",
+    "@types/mocha": "^10.0.10",
+    "chai": "^4.2.0",
+    "dotenv": "^16.4.7",
+    "hardhat": "^2.19.0",
+    "hardhat-gas-reporter": "^1.0.10",
+    "mocha": "^11.1.0",
+    "solhint": "^3.5.0",
+    "solidity-coverage": "^0.8.14",
+    "typescript": "^5.7.3"
+  },
+  "engines": {
+    "node": ">=20.0.0",
+    "npm": ">=10.0.0"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.9.6",
+    "ethers": "^6.13.5"
+  }
+}
