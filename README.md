@@ -4,6 +4,10 @@
 
 Equorum is a streamlined, gas-optimized DeFi protocol built specifically for Arbitrum Layer 2. It provides essential functionality for token distribution, staking, governance, and vesting with a focus on security, efficiency, and immutability.
 
+> ⚠️ **Note:**  
+> This protocol is in early stage.  
+> Contracts are live on Arbitrum One but governance and liquidity are still bootstrapping.
+
 ---
 
 ## 📋 Table of Contents
