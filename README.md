@@ -1,16 +1,16 @@
-# Equorum Protocol 🐴
+# Equorum Protocol
 
 **Minimalist DeFi Protocol for Arbitrum L2**
 
 Equorum is a streamlined, gas-optimized DeFi protocol built specifically for Arbitrum Layer 2. It provides essential functionality for token distribution, staking, governance, and vesting with a focus on security, efficiency, and immutability.
 
-> ⚠️ **Note:**  
+> **Note:**  
 > This protocol is in early stage.  
 > Contracts are live on Arbitrum One but governance and liquidity are still bootstrapping.
 
 ---
 
-## 📋 Table of Contents
+## Table of Contents
 
 - [Features](#features)
 - [Architecture](#architecture)
@@ -23,7 +23,7 @@ Equorum is a streamlined, gas-optimized DeFi protocol built specifically for Arb
 
 ---
 
-## ✨ Features
+## Features
 
 ### Core Functionality
 - **ERC20 Token** - Fixed supply of 48M EQM tokens
@@ -32,22 +32,22 @@ Equorum is a streamlined, gas-optimized DeFi protocol built specifically for Arb
 - **Genesis Vesting** - 72-month vesting schedule for founders
 
 ### Arbitrum L2 Optimizations
-- ✅ Compact storage layout
-- ✅ Minimal cross-contract calls
-- ✅ Efficient event emission
-- ✅ Gas-optimized operations
-- ✅ Immutable by design (no upgradability)
+- Compact storage layout
+- Minimal cross-contract calls
+- Efficient event emission
+- Gas-optimized operations
+- Immutable by design (no upgradability)
 
 ### Security Features
-- ✅ Pausable transfers (emergency)
-- ✅ Blacklist functionality
-- ✅ ReentrancyGuard on all state-changing functions
-- ✅ TimeLock for governance actions (48h delay)
-- ✅ Emergency withdrawal mechanisms
+- Pausable transfers (emergency)
+- Blacklist functionality
+- ReentrancyGuard on all state-changing functions
+- TimeLock for governance actions (48h delay)
+- Emergency withdrawal mechanisms
 
 ---
 
-## 🏗️ Architecture
+## Architecture
 
 ```
 Equorum/
@@ -65,7 +65,7 @@ Equorum/
 
 ---
 
-## 📦 Contracts
+## Contracts
 
 ### 1. EquorumToken.sol
 Main ERC20 token with fixed supply and distribution logic.
@@ -139,15 +139,15 @@ Security mechanism for delayed execution.
 - Manual release for missed months
 
 **Security & Anti-Manipulation:**
-- ✅ 100% IMMUTABLE - Cannot be changed after deployment
-- ✅ NO admin functions - No one can stop vesting
-- ✅ Genesis CANNOT vote in governance
-- ✅ Genesis CANNOT stake tokens
-- ✅ Genesis ONLY receives vested tokens as payment
+- 100% IMMUTABLE - Cannot be changed after deployment
+- NO admin functions - No one can stop vesting
+- Genesis CANNOT vote in governance
+- Genesis CANNOT stake tokens
+- Genesis ONLY receives vested tokens as payment
 
 ---
 
-## 🛠️ Installation
+## Installation
 
 ### Prerequisites
 - Node.js >= 20.0.0
@@ -179,7 +179,7 @@ npm run compile
 
 ---
 
-## 🚀 Deployment
+## Deployment
 
 ### Local Deployment (Testing)
 
@@ -226,7 +226,7 @@ npm run verify:arbitrum <CONTRACT_ADDRESS> <CONSTRUCTOR_ARGS>
 
 ---
 
-## 📝 Deployment Order
+## Deployment Order
 
 **IMPORTANT:** Deploy contracts in this exact order:
 
@@ -259,7 +259,7 @@ npm run verify:arbitrum <CONTRACT_ADDRESS> <CONSTRUCTOR_ARGS>
 
 ---
 
-## 🧪 Testing
+## Testing
 
 ### Run all tests
 ```bash
@@ -278,12 +278,12 @@ npx hardhat coverage
 
 ---
 
-## 🔒 Security
+## Security
 
 ### Audits
-- ⏳ Pending professional audit
-- ✅ Internal security review completed
-- ✅ OpenZeppelin contracts used
+- Pending professional audit
+- Internal security review completed
+- OpenZeppelin contracts used
 
 ### Security Features
 1. **Immutable Contracts** - No upgradability, no admin backdoors
@@ -293,15 +293,15 @@ npx hardhat coverage
 5. **Blacklist** - Ability to block malicious actors
 
 ### Best Practices
-- ✅ Follow CEI pattern (Checks-Effects-Interactions)
-- ✅ Use SafeMath (built-in Solidity 0.8.20)
-- ✅ Minimal external calls
-- ✅ Comprehensive event logging
-- ✅ Input validation on all functions
+- Follow CEI pattern (Checks-Effects-Interactions)
+- Use SafeMath (built-in Solidity 0.8.20)
+- Minimal external calls
+- Comprehensive event logging
+- Input validation on all functions
 
 ---
 
-## 📊 Gas Optimization
+## Gas Optimization
 
 ### Arbitrum L2 Optimizations
 - **Immutable variables** - Gas savings on reads
@@ -322,7 +322,7 @@ Vote:                 ~70,000 gas
 
 ---
 
-## 🔮 Future Enhancements
+## Future Enhancements
 
 The architecture allows for gradual feature additions:
 
@@ -343,7 +343,7 @@ The architecture allows for gradual feature additions:
 
 ---
 
-## 📄 Contract Addresses
+## Contract Addresses
 
 ### Arbitrum One (Mainnet)
 ```
@@ -359,7 +359,7 @@ EquorumGovernance:       0xF4cCaCd8d81488592b86e6A6BF54902508a05Ab3
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
 We welcome contributions! Please follow these guidelines:
 
@@ -371,13 +371,13 @@ We welcome contributions! Please follow these guidelines:
 
 ---
 
-## 📜 License
+## License
 
 MIT License - see [LICENSE](LICENSE) file for details
 
 ---
 
-## ⚠️ Disclaimer
+## Disclaimer
 
 This software is provided "as is", without warranty of any kind. Use at your own risk. Always conduct your own research and audit before deploying to mainnet.
 
