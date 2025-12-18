@@ -1,8 +1,8 @@
-# Equorum V2 🚀
+# Equorum Protocol 🐴
 
 **Minimalist DeFi Protocol for Arbitrum L2**
 
-Equorum V2 is a streamlined, gas-optimized DeFi protocol built specifically for Arbitrum Layer 2. It provides essential functionality for token distribution, staking, governance, and vesting with a focus on security, efficiency, and immutability.
+Equorum is a streamlined, gas-optimized DeFi protocol built specifically for Arbitrum Layer 2. It provides essential functionality for token distribution, staking, governance, and vesting with a focus on security, efficiency, and immutability.
 
 ---
 
@@ -46,15 +46,18 @@ Equorum V2 is a streamlined, gas-optimized DeFi protocol built specifically for 
 ## 🏗️ Architecture
 
 ```
-EquorumV2/
-├── EquorumToken.sol              (11.7 KB) - Main ERC20 token
-├── EquorumStaking.sol            (11.1 KB) - Staking with fixed APY
-├── EquorumGovernance.sol         (10.5 KB) - On-chain governance
-├── TimeLock.sol                  (7.0 KB)  - Timelock for security
-└── EquorumGenesisVesting.sol     (9.8 KB)  - Founder vesting
+Equorum/
+├── EquorumToken.sol              - Main ERC20 token
+├── EquorumStaking.sol            - Staking with dynamic APY
+├── EquorumGovernance.sol         - On-chain governance
+├── TimeLock.sol                  - Timelock for security
+├── EquorumGenesisVesting.sol     - Founder vesting
+├── EquorumFaucetDistributor.sol  - Community distribution
+├── EquorumLiquidityManager.sol   - Liquidity management
+└── EquorumReserveManager.sol     - Reserve management
 ```
 
-**Total: 5 contracts (50.1 KB)**
+**Total: 8 contracts**
 
 ---
 
@@ -340,20 +343,14 @@ The architecture allows for gradual feature additions:
 
 ### Arbitrum One (Mainnet)
 ```
-EquorumToken:         TBD
-EquorumStaking:       TBD
-EquorumGovernance:    TBD
-TimeLock:             TBD
-EquorumGenesisVesting: TBD
-```
-
-### Arbitrum Sepolia (Testnet)
-```
-EquorumToken:         TBD
-EquorumStaking:       TBD
-EquorumGovernance:    TBD
-TimeLock:             TBD
-EquorumGenesisVesting: TBD
+EquorumToken:            0xc735AbB9121A1eEdAAfB7D86AA4472c48e23cAB0
+EquorumGenesisVesting:   0x736f48BB9844d7CFa52Bb1E7665112f9CB06A5Fe
+EquorumStaking:          0xf7DB92f37308A19b0C985775d414789f2B9ecAf2
+EquorumFaucetDistributor: 0xDdeE4050738eDDBb2fdDF02470203C5Ca30858b7
+EquorumLiquidityManager: 0xBe26AD2F8E4726Ca95A3395E704D99f79833A018
+EquorumReserveManager:   0xC44F174a1450b698F6718e61bfda41B171B2d101
+TimeLock:                0x7fA6918BeC19F09BB14b017C11DF25FD7a953a84
+EquorumGovernance:       0xF4cCaCd8d81488592b86e6A6BF54902508a05Ab3
 ```
 
 ---
@@ -370,15 +367,6 @@ We welcome contributions! Please follow these guidelines:
 
 ---
 
-## 📞 Support
-
-- **Documentation:** [docs.equorum.io](https://docs.equorum.io)
-- **Discord:** [discord.gg/equorum](https://discord.gg/equorum)
-- **Twitter:** [@EquorumProtocol](https://twitter.com/EquorumProtocol)
-- **Email:** support@equorum.io
-
----
-
 ## 📜 License
 
 MIT License - see [LICENSE](LICENSE) file for details
@@ -391,4 +379,4 @@ This software is provided "as is", without warranty of any kind. Use at your own
 
 ---
 
-**Built with ❤️ for the Arbitrum ecosystem**
+**Built for the Arbitrum ecosystem**
