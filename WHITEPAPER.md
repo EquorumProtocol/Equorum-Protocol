@@ -576,7 +576,8 @@ T_next = T_last + T_cooldown
 ---
 
 **Document Version:** 1.0  
-**Last Updated:** December 19, 2024  
+**Last Updated:** December 19, 2025  
 **Status:** Early Stage Development  
 
 **Disclaimer:** This whitepaper is for informational purposes only and does not constitute financial advice. The Equorum Protocol is in early-stage development. All features and timelines are subject to change.
+
