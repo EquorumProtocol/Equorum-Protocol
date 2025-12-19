@@ -12,9 +12,9 @@ async function main() {
 
     console.log("\n📊 Current Faucet Status:");
     const stats = await Faucet.getFaucetStats();
-    console.log("- Total Distributed:", hre.ethers.utils.formatEther(stats.totalDist), "EQM");
-    console.log("- Daily Distributed:", hre.ethers.utils.formatEther(stats.dailyDist), "EQM");
-    console.log("- Remaining Balance:", hre.ethers.utils.formatEther(stats.remaining), "EQM");
+    console.log("- Total Distributed:", hre.ethers.formatEther(stats.totalDist), "EQM");
+    console.log("- Daily Distributed:", hre.ethers.formatEther(stats.dailyDist), "EQM");
+    console.log("- Remaining Balance:", hre.ethers.formatEther(stats.remaining), "EQM");
     console.log("- Paused:", stats.isPaused);
     console.log("- Whitelist Mode:", stats.isWhitelistMode);
 
