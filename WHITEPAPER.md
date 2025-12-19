@@ -1,17 +1,35 @@
 # Equorum Protocol
 ## Technical Whitepaper v1.0
 
+---
+
+## Executive Summary
+
+- **Fixed Supply:** 48,000,000 EQM with zero inflation
+- **Arbitrum-Native:** Optimized for Layer 2 low-cost transactions
+- **Governance Timelock:** 48-hour delay on all critical operations
+- **Transparent Distribution:** 79.17% allocated to staking rewards
+- **Minimalist DeFi Infrastructure:** Security-first, community-governed protocol
+
+---
+
 **Abstract:** Equorum is a minimalist DeFi protocol built on Arbitrum One, designed for efficient token economics, decentralized governance, and sustainable liquidity management. This whitepaper presents the mathematical foundations, technical architecture, and future roadmap of the protocol.
 
 ---
 
 ## 1. Introduction
 
-### 1.1 Overview
+### 1.1 Motivation
+
+Current DeFi ecosystems frequently sacrifice security for rapid innovation, exposing users to unnecessary risks. Equorum Protocol was born from the conviction that it is possible to build a minimalist, secure protocol from its foundation, where community governance and economic predictability are priorities, not afterthoughts.
+
+### 1.2 Overview
+
 Equorum Protocol is a Layer 2 DeFi infrastructure deployed on Arbitrum One, optimized for low gas costs and high throughput. The protocol implements a complete ecosystem including token distribution, staking mechanisms, governance systems, and liquidity management.
 
-### 1.2 Core Objectives
-- Establish a sustainable token economy with controlled inflation
+### 1.3 Core Objectives
+
+- Establish a sustainable token economy with zero inflation
 - Implement transparent and efficient governance mechanisms
 - Provide fair token distribution through vesting and public access
 - Enable community-driven protocol evolution
@@ -165,7 +183,7 @@ T_max = T_queue + 48 hours + 7 days
 
 ### 5.1 Liquidity Pool Strategy
 
-Initial liquidity allocation: 500,000 EQM (5% of total supply)
+Initial liquidity allocation: 500,000 EQM (1.04% of total supply)
 
 The liquidity manager implements:
 - Controlled token release
@@ -174,16 +192,16 @@ The liquidity manager implements:
 
 ### 5.2 Reserve Management
 
-Foundation and Corporate reserves (30% total supply) are managed through controlled distribution:
+Foundation and Corporate reserves (0.5% of total supply, 244,000 EQM combined) are managed through controlled distribution:
 
 ```
 R_available = min(R_total, R_rate × t)
 
 where:
-R_available = Available reserve amount
-R_total = Total reserve allocation
-R_rate = Release rate (governance-controlled)
-t = Time since activation
+R_available = Available reserve amount (in EQM)
+R_total = Total reserve allocation (244,000 EQM)
+R_rate = Release rate per month (governance-controlled, in EQM/month)
+t = Time since activation (in months)
 ```
 
 ---
@@ -319,18 +337,22 @@ Governance → TimeLock → Protocol Contracts
 - Governance framework
 - Liquidity management
 
+**Note:** Phases 2-5 represent research goals and development targets, not guaranteed deliverables. The primary focus remains on Phase 1 core stability and security.
+
 ### 9.2 Phase 2: Advanced Features (Q2 2025)
 
 **EQCON (Equorum Emergency Control)**
+An incident response system inspired by traditional financial circuit breakers, designed to protect protocol liquidity during extreme volatility or coordinated attacks.
 - Multi-level protection system
 - Automated threat detection
 - Circuit breaker mechanisms
 - Emergency response protocols
 
-**EquorumQuantumShield**
-- Quantum-resistant security measures
-- Advanced cryptographic protection
-- Future-proof transaction validation
+**Advanced Cryptography Module**
+Research-oriented cryptographic mechanisms for long-term security resilience. This module explores post-quantum cryptographic standards as they mature in the industry.
+- Future-proof cryptographic research
+- Advanced signature schemes
+- Long-term security compatibility
 
 **EQCONKeeper**
 - Chainlink Automation integration
@@ -434,9 +456,9 @@ Governance → TimeLock → Protocol Contracts
 |-----------|-------|------------|
 | Timelock Delay | 48 hours | No |
 | Grace Period | 7 days | No |
-| Proposal Threshold | TBD | Yes |
-| Voting Period | TBD | Yes |
-| Quorum | TBD | Yes |
+| Proposal Threshold | 100,000 EQM (0.21% of supply) | Yes |
+| Voting Period | 3 days | Yes |
+| Quorum | 4% of staked supply | Yes |
 
 ### 11.2 Parameter Adjustment
 
@@ -449,7 +471,9 @@ All adjustable parameters can be modified through governance proposals following
 ### 12.1 Smart Contract Risks
 - Code vulnerabilities (mitigated through audits)
 - Upgrade risks (timelock protection)
-- Admin key compromise (multi-sig recommended)
+- Admin key compromise
+
+**Mitigation:** Initial administrative keys will be transferred to a multi-signature wallet (Gnosis Safe 2/3 or 3/5) controlled by founding members before public launch. After full configuration, ownership can be renounced for true immutability.
 
 ### 12.2 Economic Risks
 - Market volatility
@@ -538,16 +562,16 @@ T_next = T_last + T_cooldown
 
 ## Appendix B: Contract Addresses (Arbitrum One)
 
-| Contract | Address |
-|----------|---------|
-| EquorumToken | 0xc735AbB9121A1eEdAAfB7D86AA4472c48e23cAB0 |
-| EquorumGenesisVesting | 0x736f48BB9844d7CFa52Bb1E7665112f9CB06A5Fe |
-| EquorumStaking | 0xf7DB92f37308A19b0C985775d414789f2B9ecAf2 |
-| EquorumFaucetDistributor | 0xDdeE4050738eDDBb2fdDF02470203C5Ca30858b7 |
-| EquorumLiquidityManager | 0xBe26AD2F8E4726Ca95A3395E704D99f79833A018 |
-| EquorumReserveManager | 0xC44F174a1450b698F6718e61bfda41B171B2d101 |
-| TimeLock | 0x7fA6918BeC19F09BB14b017C11DF25FD7a953a84 |
-| EquorumGovernance | 0xF4cCaCd8d81488592b86e6A6BF54902508a05Ab3 |
+| Contract | Address | Arbiscan |
+|----------|---------|----------|
+| EquorumToken | 0xc735AbB9121A1eEdAAfB7D86AA4472c48e23cAB0 | [View](https://arbiscan.io/address/0xc735AbB9121A1eEdAAfB7D86AA4472c48e23cAB0) |
+| EquorumGenesisVesting | 0x736f48BB9844d7CFa52Bb1E7665112f9CB06A5Fe | [View](https://arbiscan.io/address/0x736f48BB9844d7CFa52Bb1E7665112f9CB06A5Fe) |
+| EquorumStaking | 0xf7DB92f37308A19b0C985775d414789f2B9ecAf2 | [View](https://arbiscan.io/address/0xf7DB92f37308A19b0C985775d414789f2B9ecAf2) |
+| EquorumFaucetDistributor | 0xDdeE4050738eDDBb2fdDF02470203C5Ca30858b7 | [View](https://arbiscan.io/address/0xDdeE4050738eDDBb2fdDF02470203C5Ca30858b7) |
+| EquorumLiquidityManager | 0xBe26AD2F8E4726Ca95A3395E704D99f79833A018 | [View](https://arbiscan.io/address/0xBe26AD2F8E4726Ca95A3395E704D99f79833A018) |
+| EquorumReserveManager | 0xC44F174a1450b698F6718e61bfda41B171B2d101 | [View](https://arbiscan.io/address/0xC44F174a1450b698F6718e61bfda41B171B2d101) |
+| TimeLock | 0x7fA6918BeC19F09BB14b017C11DF25FD7a953a84 | [View](https://arbiscan.io/address/0x7fA6918BeC19F09BB14b017C11DF25FD7a953a84) |
+| EquorumGovernance | 0xF4cCaCd8d81488592b86e6A6BF54902508a05Ab3 | [View](https://arbiscan.io/address/0xF4cCaCd8d81488592b86e6A6BF54902508a05Ab3) |
 
 ---
 
