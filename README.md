@@ -10,8 +10,23 @@ Equorum is a streamlined, gas-optimized DeFi protocol built specifically for Arb
 
 ---
 
+## 🚰 Get Free EQM Tokens!
+
+**New users can claim free EQM tokens from our faucet!**
+
+👉 **[Click here for Faucet Instructions](./FAUCET.md)** 👈
+
+- **0.001 EQM per claim** (every 24 hours)
+- **No registration required** - just connect your wallet
+- **Claim directly on Arbiscan** - simple and secure
+
+[Start claiming now →](https://arbiscan.io/address/0xDdeE4050738eDDBb2fdDF02470203C5Ca30858b7#writeContract)
+
+---
+
 ## Table of Contents
 
+- [Get Free Tokens](#-get-free-eqm-tokens)
 - [Features](#features)
 - [Architecture](#architecture)
 - [Contracts](#contracts)
