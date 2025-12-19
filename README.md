@@ -24,9 +24,26 @@ Equorum is a streamlined, gas-optimized DeFi protocol built specifically for Arb
 
 ---
 
+## 🗺️ Roadmap: 8 to 59 Contracts
+
+**Equorum is just getting started!** We launched with 8 essential contracts, but our vision is to build a **complete DeFi ecosystem with 59 contracts** over the next 2 years.
+
+👉 **[View Full Roadmap](./ROADMAP.md)** - See how we'll evolve from minimalist protocol to advanced DeFi infrastructure
+
+**Coming in 2025-2026:**
+- 🔐 Emergency controls & quantum security
+- 📊 Advanced oracle systems
+- 🎁 Enhanced staking & rewards
+- 🗳️ Advanced governance & DAO
+- 🌉 Cross-chain integration
+- ⚡ Flash loans & yield optimization
+
+---
+
 ## Table of Contents
 
 - [Get Free Tokens](#-get-free-eqm-tokens)
+- [Roadmap](#-roadmap-8-to-59-contracts)
 - [Features](#features)
 - [Architecture](#architecture)
 - [Contracts](#contracts)
