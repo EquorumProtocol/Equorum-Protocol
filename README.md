@@ -24,26 +24,25 @@ Equorum is a streamlined, gas-optimized DeFi protocol built specifically for Arb
 
 ---
 
-## 🗺️ Roadmap: 8 to 59 Contracts
+## 🗺️ Product Roadmap
 
-**Equorum is just getting started!** We launched with 8 essential contracts, but our vision is to build a **complete DeFi ecosystem with 59 contracts** over the next 2 years.
+**Equorum is focused on users, not features.** We have 8 working contracts deployed on Arbitrum One. Our goal is to make them useful to real people.
 
-👉 **[View Full Roadmap](./ROADMAP.md)** - See how we'll evolve from minimalist protocol to advanced DeFi infrastructure
+👉 **[View Product Roadmap](./ROADMAP.md)** - See our 90-day plan to achieve product-market fit
 
-**Coming in 2025-2026:**
-- 🔐 Emergency controls & quantum security
-- 📊 Advanced oracle systems
-- 🎁 Enhanced staking & rewards
-- 🗳️ Advanced governance & DAO
-- 🌉 Cross-chain integration
-- ⚡ Flash loans & yield optimization
+**Q1 2025 Goals:**
+- 🎯 50+ active stakers
+- 🗳️ Complete first governance cycle
+- 💬 30+ user interviews
+- 📊 Data-driven product decisions
+- ✅ Build what users actually need
 
 ---
 
 ## Table of Contents
 
 - [Get Free Tokens](#-get-free-eqm-tokens)
-- [Roadmap](#-roadmap-8-to-59-contracts)
+- [Roadmap](#-product-roadmap)
 - [Features](#features)
 - [Architecture](#architecture)
 - [Contracts](#contracts)
@@ -71,11 +70,11 @@ Equorum is a streamlined, gas-optimized DeFi protocol built specifically for Arb
 - Immutable by design (no upgradability)
 
 ### Security Features
-- Pausable transfers (emergency)
+- Pausable transfers
 - Blacklist functionality
 - ReentrancyGuard on all state-changing functions
 - TimeLock for governance actions (48h delay)
-- Emergency withdrawal mechanisms
+- Withdrawal mechanisms with cooldowns
 
 ---
 
@@ -129,7 +128,7 @@ Main ERC20 token with fixed supply and distribution logic.
 - **High utilization (>75%)** → APY 1.5% (control inflation)
 - **Medium utilization (25-75%)** → APY 2.5% (balanced)
 - Cooldown period: 7 days
-- Emergency withdrawal
+- Withdrawal with cooldown
 - Reward calculation per second
 - Anyone can trigger APY adjustment (decentralized)
 
@@ -138,7 +137,7 @@ Main ERC20 token with fixed supply and distribution logic.
 - Sustainable tokenomics (no 1000% APY scams)
 - Predictable 30-day adjustment periods
 - Transparent and automatic
-- Emergency withdrawal (when paused)
+- Withdrawal available when paused
 
 ### 3. EquorumGovernance.sol
 On-chain governance with proposal and voting system.
@@ -167,7 +166,7 @@ Security mechanism for delayed execution.
 - Duration: 72 months (6 years)
 - Monthly release: ~41,666.67 EQM (automatic)
 - Month 72: Releases remaining balance to complete exactly 3M
-- Emergency withdrawal (48h delay)
+- Withdrawal with 48h delay
 - Manual release for missed months
 
 **Security & Anti-Manipulation:**
@@ -320,7 +319,7 @@ npx hardhat coverage
 ### Security Features
 1. **Immutable Contracts** - No upgradability, no admin backdoors
 2. **ReentrancyGuard** - Protection against reentrancy attacks
-3. **Pausable** - Emergency pause functionality
+3. **Pausable** - Pause functionality for security
 4. **TimeLock** - 48-hour delay for governance actions
 5. **Blacklist** - Ability to block malicious actors
 
@@ -354,24 +353,25 @@ Vote:                 ~70,000 gas
 
 ---
 
-## Future Enhancements
+## What's Next
 
-The architecture allows for gradual feature additions:
+**We're focused on product-market fit, not features.**
 
-### Phase 2 (Months 2-3)
-- Staking boost multipliers
-- Referral system
-- Collective delegation pools
+### Next 30 Days
+- Get 50+ people staking
+- Complete first governance proposal
+- Interview 30+ DeFi users
+- Learn what people actually need
 
-### Phase 3 (Months 4-6)
-- EQCON price protection system
-- Quantum-resistant security
-- Advanced oracle integration
+### After That
+- Build what users tell us they want
+- Fix what users tell us is broken
+- Improve based on real feedback
+- Scale what works
 
-### Phase 4 (Months 7+)
-- Token recycling mechanism
-- Liquidity mining
-- NFT tier system
+**No new contracts until we have 50 active users.**
+
+See [NEXT_STEPS.md](./NEXT_STEPS.md) for detailed plan.
 
 ---
 
