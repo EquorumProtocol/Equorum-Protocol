@@ -6,7 +6,7 @@
 
 ## 🎯 Vision
 
-Equorum is a **governance and staking protocol** on Arbitrum One. We have 8 deployed, audited contracts that work. Our focus is making them useful to real people, not building more contracts.
+Equorum is a **governance and staking protocol** on Arbitrum One. We have 8 deployed contracts that work. Our focus is making them useful to real people, not building more contracts.
 
 This roadmap is about **product**, not code. It's about users, not features.
 
@@ -40,7 +40,7 @@ This roadmap is about **product**, not code. It's about users, not features.
 - All contracts verified on Arbiscan
 - Whitepaper and documentation published
 - Faucet activated for testing
-- Trust Wallet submission
+- Community channels (Discord, Twitter, Bitcointalk)
 
 **What We Have:**
 - Working token with vesting
@@ -176,15 +176,14 @@ This roadmap is about **product**, not code. It's about users, not features.
 
 - 8 contracts deployed and verified
 - Open source on GitHub
-- Community reviewed
+- Internal security review completed
+- External audit planned for Phase 2
 - 48-hour timelock on all governance actions
 
-### Bug Bounty (Active)
+### Bug Bounty (Planned)
 
-- **Critical:** Up to 50,000 EQM
-- **High:** Up to 10,000 EQM
-- **Medium:** Up to 2,000 EQM
-- **Low:** Up to 500 EQM
+- **Status:** To be launched after external audit
+- **Planned Rewards:** TBD based on audit findings
 
 **We focus on securing what exists, not building more attack surface.**
 
@@ -260,8 +259,9 @@ Equorum Protocol (Live on Arbitrum One)
 - **GitHub:** https://github.com/EquorumProtocol/Equorum-Protocol
 - **Whitepaper:** [WHITEPAPER.md](./WHITEPAPER.md)
 - **Faucet:** [FAUCET.md](./FAUCET.md)
-- **Discord:** [Coming Soon]
-- **Twitter:** [Coming Soon]
+- **Discord:** https://discord.gg/CGMh5ZSv
+- **Twitter:** https://twitter.com/equorumprotocol
+- **Bitcointalk:** https://bitcointalk.org/index.php?topic=5569918.0
 
 ---
 
@@ -269,8 +269,8 @@ Equorum Protocol (Live on Arbitrum One)
 
 We're not building 59 contracts. We're building a protocol people actually use.
 
-**Last Updated:** December 29, 2024  
-**Version:** 2.0 - Product Focus  
+**Last Updated:** December 30, 2025  
+**Version:** 2.1 - Product Focus  
 **Status:** Phase 1 Complete, Phase 2 Starting
 
 ---
