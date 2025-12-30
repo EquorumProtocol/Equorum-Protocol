@@ -50,3 +50,4 @@ npm-debug.log*
 # Misc
 *.bak
 *.tmp
+.env.example
