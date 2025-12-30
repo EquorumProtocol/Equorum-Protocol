@@ -8,12 +8,13 @@
 - **Fixed Supply:** 48,000,000 EQM with zero inflation
 - **Arbitrum-Native:** Optimized for Layer 2 low-cost transactions
 - **Governance Timelock:** 48-hour delay on all critical operations
-- **Transparent Distribution:** 79.17% allocated to staking rewards
-- **Minimalist DeFi Infrastructure:** Security-first, community-governed protocol
+- **Transparent Distribution:** 79.17% allocated to staking rewards over time
+- **Current Status:** Early stage with temporary admin controls for security
+- **Governance:** On-chain voting with timelock protection
 
 ---
 
-**Abstract:** Equorum is a minimalist DeFi protocol built on Arbitrum One, designed for efficient token economics, decentralized governance, and sustainable liquidity management. This whitepaper presents the mathematical foundations, technical architecture, and future roadmap of the protocol.
+**Abstract:** Equorum is a governance and staking protocol on Arbitrum One, currently in early deployment phase. The protocol implements on-chain governance with 48-hour timelock security, dynamic staking rewards (1.0%-3.5% APY), and transparent token distribution. Administrative controls are temporarily maintained for security and will be transferred to governance after initial testing period.
 
 ---
 
@@ -21,18 +22,25 @@
 
 ### 1.1 Motivation
 
-Current DeFi ecosystems frequently sacrifice security for rapid innovation, exposing users to unnecessary risks. Equorum Protocol was born from the conviction that it is possible to build a minimalist, secure protocol from its foundation, where community governance and economic predictability are priorities, not afterthoughts.
+Equorum Protocol provides on-chain governance infrastructure for protocols on Arbitrum One. By offering pre-built governance contracts with timelock security, the protocol reduces development costs and security risks for projects seeking decentralized decision-making.
 
 ### 1.2 Overview
 
-Equorum Protocol is a Layer 2 DeFi infrastructure deployed on Arbitrum One, optimized for low gas costs and high throughput. The protocol implements a complete ecosystem including token distribution, staking mechanisms, governance systems, and liquidity management.
+Equorum Protocol is deployed on Arbitrum One mainnet (December 2025). The protocol is in **early testing phase** with limited user base. Administrative controls (pause, blacklist) are currently active for security purposes and will be transferred to governance or renounced after the protocol matures.
 
 ### 1.3 Core Objectives
 
-- Establish a sustainable token economy with zero inflation
-- Implement transparent and efficient governance mechanisms
-- Provide fair token distribution through vesting and public access
-- Enable community-driven protocol evolution
+- Provide on-chain governance infrastructure for Arbitrum protocols
+- Implement sustainable staking with dynamic APY (1.0% - 3.5%)
+- Build engaged community through transparent development
+- Transition to full decentralized governance over time
+
+### 1.4 Current Development Stage
+
+**Status:** Early deployment, limited users  
+**Admin Controls:** Active (temporary, for security)  
+**Ownership Plan:** Transfer to TimeLock/Governance after testing  
+**Audit Status:** Internal review complete, external audit planned
 
 ---
 
@@ -54,7 +62,7 @@ The total supply is allocated as follows:
 |------------|--------|------------|---------|
 | Staking Rewards | 38,000,000 EQM | 79.17% | Distributed over time |
 | ICO/Public Sale | 4,000,000 EQM | 8.33% | Controlled release |
-| Genesis Team | 3,000,000 EQM | 6.25% | 72 months linear |
+| Founder Allocation | 3,000,000 EQM | 6.25% | 72 months linear vesting |
 | Faucet Distribution | 2,256,000 EQM | 4.70% | Public claims |
 | Liquidity Pool | 500,000 EQM | 1.04% | Immediate |
 | Foundation Reserve | 122,000 EQM | 0.25% | Controlled release |
@@ -62,14 +70,14 @@ The total supply is allocated as follows:
 
 ### 2.3 Vesting Mathematics
 
-Genesis vesting follows a linear release schedule:
+Founder allocation follows a linear 72-month vesting schedule:
 
 ```
 V(t) = (S × t) / T
 
 where:
 V(t) = Vested amount at time t
-S = Total vesting amount (3,000,000 EQM)
+S = Total founder allocation (3,000,000 EQM)
 T = Total vesting period (72 months)
 t = Time elapsed since vesting start
 ```
@@ -78,6 +86,8 @@ Monthly release rate:
 ```
 R_monthly = S / T = 3,000,000 / 72 ≈ 41,666.67 EQM/month
 ```
+
+**Note:** This is standard founder allocation similar to other crypto projects (e.g., Bitcoin's Satoshi allocation, Ethereum's founder allocation). The 72-month vesting ensures long-term alignment with protocol success.
 
 ### 2.4 Inflation Control
 
@@ -245,24 +255,39 @@ T_cooldown = Cooldown period
 
 ### 7.1 Access Control
 
-The protocol implements role-based access control:
+**Current Status (Early Testing Phase):**
 
-- **Owner:** Contract deployer, can transfer ownership
-- **Governance:** Controls protocol parameters
-- **Timelock:** Enforces execution delays
+The protocol currently has owner-based controls for security:
 
-### 7.2 Pausability
+- **Owner:** Can pause transfers and blacklist addresses (emergency only)
+- **Governance:** Timelock-protected proposals (48h delay)
+- **Planned:** Transfer ownership to TimeLock or renounce after testing
 
-Critical contracts implement emergency pause:
+**Transparency:**
+- All admin actions emit on-chain events
+- Owner address publicly visible on Arbiscan
+- Roadmap includes decentralization of admin controls
+
+### 7.2 Emergency Controls
+
+**Pausability:**
+Token contract can be paused by owner in emergencies:
 
 ```
 State ∈ {Active, Paused}
 
 When Paused:
-- User operations blocked
-- Admin functions available
-- Emergency withdrawals enabled
+- Token transfers blocked
+- Staking/unstaking blocked
 ```
+
+**Blacklist:**
+Owner can blacklist malicious addresses:
+- Cannot blacklist protocol contracts
+- All actions publicly visible on-chain
+- Used only for security (exploits, attacks)
+
+**Rationale:** These controls protect users during early testing and will be removed or transferred to governance as protocol matures.
 
 ### 7.3 Reentrancy Protection
 
@@ -281,9 +306,9 @@ All state-changing functions implement reentrancy guards using OpenZeppelin's Re
 - Pausable transfers
 
 **EquorumGenesisVesting.sol**
-- Linear vesting schedule
-- Beneficiary management
-- Release tracking
+- Founder allocation vesting (72 months)
+- Linear release schedule
+- Transparent on-chain tracking
 
 **EquorumStaking.sol**
 - Stake/unstake operations
@@ -331,13 +356,25 @@ Governance → TimeLock → Protocol Contracts
 
 ## 9. Future Development Roadmap
 
-### 9.1 Phase 1: Foundation (Current)
-- Core token deployment
-- Basic staking mechanism
-- Governance framework
-- Liquidity management
+### 9.1 Phase 1: Foundation & Testing (Current - Q1 2025)
 
-**Note:** Phases 2-5 represent research goals and development targets, not guaranteed deliverables. The primary focus remains on Phase 1 core stability and security.
+**Completed:**
+- ✅ Core contracts deployed on Arbitrum One
+- ✅ Staking with dynamic APY (1.0% - 3.5%)
+- ✅ Governance with 48h TimeLock
+- ✅ Token distribution system
+
+**In Progress:**
+- 🔄 Community building (Discord, Bitcointalk, Twitter)
+- 🔄 Technical documentation
+- 🔄 Testing with early users
+
+**Next Steps:**
+- Transfer ownership to Gnosis Safe multisig
+- External security audit
+- Gradual transition to governance control
+
+**Note:** Phases 2-5 are research goals, not guaranteed deliverables. Timeline may change based on feedback and market conditions.
 
 ### 9.2 Phase 2: Advanced Features (Q2 2025)
 
@@ -469,11 +506,23 @@ All adjustable parameters can be modified through governance proposals following
 ## 12. Risk Analysis
 
 ### 12.1 Smart Contract Risks
-- Code vulnerabilities (mitigated through audits)
-- Upgrade risks (timelock protection)
-- Admin key compromise
 
-**Mitigation:** Initial administrative keys will be transferred to a multi-signature wallet (Gnosis Safe 2/3 or 3/5) controlled by founding members before public launch. After full configuration, ownership can be renounced for true immutability.
+**Current Risks:**
+- Owner has pause and blacklist capabilities (temporary)
+- Contracts are non-upgradeable (no proxy pattern)
+- External audit not yet completed
+
+**Mitigation:**
+- Owner controls are documented and transparent
+- All admin actions emit on-chain events
+- Planned transfer to TimeLock/Governance
+- External audit planned after initial testing
+
+**Admin Key Roadmap:**
+1. Current: Single owner (deployer)
+2. Short-term: Gnosis Safe multisig (2/3 or 3/5)
+3. Long-term: TimeLock (governance-controlled)
+4. Final: Renounce ownership (if appropriate)
 
 ### 12.2 Economic Risks
 - Market volatility
@@ -498,9 +547,17 @@ All contracts are verified on Arbiscan:
 - Constructor arguments published
 
 ### 13.2 Security Audits
-- Internal security review: Completed
-- External audit: Planned for Phase 2
-- Bug bounty program: To be announced
+
+**Current Status:**
+- Internal security review: ✅ Completed
+- External professional audit: ⏳ Planned
+- Bug bounty program: ⏳ Planned for Phase 2
+
+**Audit Roadmap:**
+1. Complete initial testing period
+2. Engage professional audit firm
+3. Address findings and re-audit if needed
+4. Launch bug bounty program
 
 ---
 
@@ -575,9 +632,9 @@ T_next = T_last + T_cooldown
 
 ---
 
-**Document Version:** 1.0  
-**Last Updated:** December 19, 2025  
-**Status:** Early Stage Development  
+**Document Version:** 1.1  
+**Last Updated:** December 30, 2025  
+**Status:** Early Testing Phase  
 
-**Disclaimer:** This whitepaper is for informational purposes only and does not constitute financial advice. The Equorum Protocol is in early-stage development. All features and timelines are subject to change.
+**Disclaimer:** This whitepaper is for informational purposes only and does not constitute financial advice. Equorum Protocol is in early testing with temporary admin controls. The protocol has not been externally audited. Use at your own risk. All features and timelines are subject to change.
 

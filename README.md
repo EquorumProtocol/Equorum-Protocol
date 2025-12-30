@@ -1,12 +1,12 @@
 # Equorum Protocol
 
-**Minimalist DeFi Protocol for Arbitrum L2**
+**Governance & Staking Protocol for Arbitrum One**
 
-Equorum is a streamlined, gas-optimized DeFi protocol built specifically for Arbitrum Layer 2. It provides essential functionality for token distribution, staking, governance, and vesting with a focus on security, efficiency, and immutability.
+Equorum is a governance and staking protocol built on Arbitrum One. It provides on-chain governance with timelock security, dynamic staking rewards (1.0%-3.5% APY), and transparent token distribution.
 
-> **Note:**  
-> This protocol is in early stage.  
-> Contracts are live on Arbitrum One but governance and liquidity are still bootstrapping.
+> **Status:**  
+> Early testing phase - deployed on mainnet with temporary admin controls for security.  
+> External audit pending. Use at your own risk.
 
 ---
 
@@ -58,20 +58,20 @@ Equorum is a streamlined, gas-optimized DeFi protocol built specifically for Arb
 
 ### Core Functionality
 - **ERC20 Token** - Fixed supply of 48M EQM tokens
-- **Staking** - Fixed 2.5% APY with 7-day cooldown
-- **Governance** - On-chain voting with TimeLock security
-- **Genesis Vesting** - 72-month vesting schedule for founders
+- **Staking** - Dynamic APY (1.0%-3.5%) with 7-day cooldown
+- **Governance** - On-chain voting with 48h TimeLock
+- **Founder Vesting** - 72-month linear vesting (6.25% of supply)
 
 ### Arbitrum L2 Optimizations
 - Compact storage layout
 - Minimal cross-contract calls
 - Efficient event emission
 - Gas-optimized operations
-- Immutable by design (no upgradability)
+- Non-upgradeable contracts (no proxy pattern)
 
 ### Security Features
-- Pausable transfers
-- Blacklist functionality
+- **Admin Controls (Temporary):** Pause and blacklist for emergencies
+- **Planned:** Transfer ownership to governance or renounce
 - ReentrancyGuard on all state-changing functions
 - TimeLock for governance actions (48h delay)
 - Withdrawal mechanisms with cooldowns
@@ -110,10 +110,10 @@ Main ERC20 token with fixed supply and distribution logic.
 
 **Token Distribution:**
 ```
-38.0M  (79.17%) → Staking rewards
-4.0M   (8.33%)  → ICO/Sale
-3.0M   (6.25%)  → Genesis vesting (72 months)
-2.256M (4.70%)  → Faucet
+38.0M  (79.17%) → Staking rewards (distributed over time)
+4.0M   (8.33%)  → ICO/Sale (not launched)
+3.0M   (6.25%)  → Founder allocation (72-month vesting)
+2.256M (4.70%)  → Faucet distribution
 500K   (1.04%)  → Initial liquidity
 122K   (0.25%)  → Foundation reserve
 122K   (0.25%)  → Corporate reserve
@@ -159,22 +159,21 @@ Security mechanism for delayed execution.
 - Grace period: 7 days
 
 ### 5. EquorumGenesisVesting.sol
-**IMMUTABLE** vesting contract for founder allocation (payment for development).
+Vesting contract for founder allocation.
 
 **Key Features:**
 - Total allocation: 3M EQM (6.25% of supply)
 - Duration: 72 months (6 years)
-- Monthly release: ~41,666.67 EQM (automatic)
-- Month 72: Releases remaining balance to complete exactly 3M
+- Monthly release: ~41,666.67 EQM (linear vesting)
 - Withdrawal with 48h delay
 - Manual release for missed months
 
-**Security & Anti-Manipulation:**
-- 100% IMMUTABLE - Cannot be changed after deployment
-- NO admin functions - No one can stop vesting
-- Genesis CANNOT vote in governance
-- Genesis CANNOT stake tokens
-- Genesis ONLY receives vested tokens as payment
+**Security:**
+- Immutable vesting schedule (cannot be changed)
+- No admin functions to stop vesting
+- Genesis wallet excluded from governance voting
+- Genesis wallet excluded from staking
+- Standard founder allocation (similar to Bitcoin, Ethereum)
 
 ---
 
@@ -312,16 +311,23 @@ npx hardhat coverage
 ## Security
 
 ### Audits
-- Pending professional audit
-- Internal security review completed
-- OpenZeppelin contracts used
+- **External audit:** Not yet completed
+- **Internal review:** Completed
+- **OpenZeppelin:** Standard contracts used
+
+**Warning:** Protocol has not been professionally audited. Use at your own risk.
 
 ### Security Features
-1. **Immutable Contracts** - No upgradability, no admin backdoors
+1. **Non-Upgradeable** - No proxy pattern, no upgradability
 2. **ReentrancyGuard** - Protection against reentrancy attacks
-3. **Pausable** - Pause functionality for security
+3. **Pausable** - Owner can pause in emergencies (temporary)
 4. **TimeLock** - 48-hour delay for governance actions
-5. **Blacklist** - Ability to block malicious actors
+5. **Blacklist** - Owner can block malicious actors (temporary)
+
+**Admin Controls:**
+- Current: Owner has pause and blacklist capabilities
+- Planned: Transfer to governance or renounce ownership
+- Transparent: All actions emit on-chain events
 
 ### Best Practices
 - Follow CEI pattern (Checks-Effects-Interactions)
@@ -411,7 +417,9 @@ MIT License - see [LICENSE](LICENSE) file for details
 
 ## Disclaimer
 
-This software is provided "as is", without warranty of any kind. Use at your own risk. Always conduct your own research and audit before deploying to mainnet.
+**IMPORTANT:** This protocol is in early testing phase with temporary admin controls. It has NOT been externally audited. The owner can pause transfers and blacklist addresses. Use at your own risk.
+
+This software is provided "as is", without warranty of any kind. Always conduct your own research before using.
 
 ---
 
